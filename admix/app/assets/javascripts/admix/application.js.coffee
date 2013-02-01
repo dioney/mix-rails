@@ -37,8 +37,8 @@ $ ->
       symbol: 'R$'
       decimal: ','
       precision: 2
-      thousands: '.'
-      showSymbol: true
+      thousands: ''
+      showSymbol: false
 
   $("input.datepicker").each (i) ->
     $(this).datepicker

@@ -17,12 +17,17 @@ pt-BR:
   pending_no: 'Não'
   pending: 'Pendente de aprovação'
 
+  categories:
+    categories: 'Categorias'
+    category: 'Categoria'
+
   simple_form:
     labels:
       defaults:
+        file: 'Arquivo'
         published_at: 'Data de publicação'
         published_until: 'Publicação até'
-        payment_forms_ids: 'Formas de pagamento'
+        payment_form_ids: 'Formas de pagamento'
         payment_forms: 'Formas de pagamento'
         featured: 'Destaque'
         price: 'Preço'
