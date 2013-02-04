@@ -24,12 +24,14 @@ pt-BR:
   simple_form:
     labels:
       defaults:
+        lamina_image: 'Imagem de lâmina'
+        featured_image: 'Imagem destaque'
         file: 'Arquivo'
         published_at: 'Data de publicação'
         published_until: 'Publicação até'
         payment_form_ids: 'Formas de pagamento'
         payment_forms: 'Formas de pagamento'
-        featured: 'Destaque'
+        featured: 'Destaque no site'
         price: 'Preço'
         down_payment: 'Valor de entrada'
         quantity_of_installments: 'Quantidade de parcelas'

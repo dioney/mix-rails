@@ -13,7 +13,7 @@ module Admix
     # Add a breadcrumb, in this case nested resources. ;)
     before_filter -> {
       if defined?(parent_type)
-        breadcrumbs.add t("#{parent_type.to_s.gsub('_', '').pluralize}.#{parent_type.to_s.gsub('_', '').pluralize}") , polymorphic_path([:admix,parent_class])
+        breadcrumbs.add t("#{parent_type.to_s.gsub('_', '').pluralize}.#{parent_type.to_s.gsub('_', '').pluralize}") , polymorphic_path([:admix, parent_class])
         breadcrumbs.add "#{parent.name}" , parent_url
       end
     }
@@ -22,11 +22,6 @@ module Admix
     before_filter -> { breadcrumbs.add "#{resource[crumb_field]}" , resource_url, :i18n => false } , except: [:index, :new, :create ]
     before_filter -> { breadcrumbs.add t("admix.crud.new.title"), :i18n => false } , only: [:new ]
     before_filter -> { @crumb_field = crumb_field } , only: [:edit ]
-
-    def initialize(datagrid_class = nil)
-      super()
-      @datagrid_class = guess_datagrid_class unless datagrid_class
-    end
 
     protected
 
@@ -60,7 +55,11 @@ module Admix
     end
 
     def report
-      @datagrid_class.new(params[datagrid_param_name])
+      datagrid_class.new(params[datagrid_param_name])
+    end
+
+    def datagrid_class
+      @datagrid_class = guess_datagrid_class
     end
 
     private

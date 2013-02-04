@@ -1,9 +1,18 @@
 $navbarHeight: 60px;
 
 @import "bootstrap";
+@import "bootstrap-responsive";
 
 .form-admix {
   label {
     font-weight: bold;
   }
+}
+
+.thumbnails > li:nth-child(4n+1) {
+    margin-left: 0px;
+}
+
+form legend {
+  margin-bottom:0;
 }

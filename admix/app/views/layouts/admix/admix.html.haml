@@ -2,16 +2,17 @@
 %html
   %head
     %meta{:charset => "utf-8"}
-      %meta{:content => "noindex, nofollow", :name => "robots"}
-        %title= app_title
-        = stylesheet_link_tag    "admix/application", :media => "all"
-        = yield :stylesheets
-        %script
-          var HOST_NAME  = "#{request.protocol + request.host_with_port}";
-          var ROOT_PATH  = HOST_NAME + "#{root_path.chomp("/")}";
-        = javascript_include_tag "admix/application"
-        = yield :javascripts
-        = csrf_meta_tags
+    %meta{:content => "noindex, nofollow", :name => "robots"}
+    %meta{:name => 'viewport', :content => "width=device-width, initial-scale=1.0"}
+    %title= app_title
+    = stylesheet_link_tag    "admix/application", :media => "all"
+    = yield :stylesheets
+    %script
+      var HOST_NAME  = "#{request.protocol + request.host_with_port}";
+      var ROOT_PATH  = HOST_NAME + "#{root_path.chomp("/")}";
+    = javascript_include_tag "admix/application"
+    = yield :javascripts
+    = csrf_meta_tags
   %body
 
     / Top
@@ -46,11 +47,24 @@
 
 
     #content.container-fluid
-      - if notice
-        %p.alert.alert-success= notice
-      - if alert
-        %p.alert.alert-warn= alert
-      = yield
+      .row-fluid
+        .span2.well
+          %ul.nav.nav-list
+            %li.nav-header Teste
+            %li= link_to "teste", 'teste'
+            %li= link_to "teste", 'teste'
+            %li.divider
+            %li= link_to "teste", 'teste'
+            %li= link_to "teste", 'teste'
+            %li= link_to "teste", 'teste'
+        .span10
+          - if notice
+            %p.alert.alert-success= notice
+          - if alert
+            %p.alert.alert-warn= alert
+          = yield
+
+
       -#.row-fluid
         .span2
           %ul.nav.nav-pills.nav-stacked

@@ -10,7 +10,7 @@ class Application.Views.Photos.PhotoView extends Backbone.View
     "click .save": 'save_description'
 
   tagName: "li"
-  className: 'span4'
+  className: 'span3'
 
   initialize: ->
     @tmpDescription = null

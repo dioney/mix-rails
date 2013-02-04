@@ -82,6 +82,7 @@ TODO: Add some docs for admix
 
 # Plugins (Extensions)
 
-## Creatig a extensions
+## Creating a extension
 
     $ rails plugin new mix-rails-pluginame -T --skip-active-record --skip-bundle --dummy-path=spec/dummy --full
+s

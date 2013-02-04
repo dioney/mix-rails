@@ -22,3 +22,7 @@
   width: 61%;
   margin-left: -30%;
 }
+
+form abbr {
+  color: red;
+}
