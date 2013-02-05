@@ -39,7 +39,7 @@
           .site-logo
             - admix_logo = Setting.admix_logo
             - if admix_logo and admix_logo.image?
-              = image_tag admix_logo.image.url
+              = image_tag admix_logo.image.url()
             - else
               = image_tag("admix/mix-framework-small.png")
         .span10

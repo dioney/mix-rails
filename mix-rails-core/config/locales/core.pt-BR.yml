@@ -24,11 +24,13 @@ pt-BR:
   simple_form:
     labels:
       defaults:
+        code: 'Código'
         lamina_image: 'Imagem de lâmina'
         featured_image: 'Imagem destaque'
         file: 'Arquivo'
         published_at: 'Data de publicação'
         published_until: 'Publicação até'
+        category_ids: 'Categorias'
         payment_form_ids: 'Formas de pagamento'
         payment_forms: 'Formas de pagamento'
         featured: 'Destaque no site'
