@@ -48,16 +48,7 @@
 
     #content.container-fluid
       .row-fluid
-        .span2.well
-          %ul.nav.nav-list
-            %li.nav-header Teste
-            %li= link_to "teste", 'teste'
-            %li= link_to "teste", 'teste'
-            %li.divider
-            %li= link_to "teste", 'teste'
-            %li= link_to "teste", 'teste'
-            %li= link_to "teste", 'teste'
-        .span10
+        .span12
           - if notice
             %p.alert.alert-success= notice
           - if alert
