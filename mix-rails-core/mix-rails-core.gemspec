@@ -26,12 +26,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "i18n_routing"
 
   gem.add_dependency "rails-i18n"
-
-  gem.add_dependency "mongoid"  
-  gem.add_dependency "mongoid_slug"
-  gem.add_dependency "bson_ext"
-  gem.add_dependency "mongo"
-  gem.add_dependency "carrierwave-mongoid"
+  gem.add_dependency "carrierwave"
   gem.add_dependency "mini_magick"
   gem.add_dependency "haml_coffee_assets"
   

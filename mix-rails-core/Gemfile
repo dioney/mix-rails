@@ -16,13 +16,8 @@ gem "i18n_routing", "~> 0.6.2"
 
 gem 'rails-i18n'
 
-# TODO: Create two new to separate the mix-rails-core(class api) from the mix-rails-orm(database-access)
-gem 'mongoid'
 gem 'authority'
-gem 'mongoid_slug'
-gem 'bson_ext'
-gem 'mongo'
-gem 'carrierwave-mongoid'
+gem 'carrierwave'
 gem 'mini_magick'
 gem 'haml_coffee_assets'
 
@@ -39,7 +34,6 @@ group :test do
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'mongoid-rspec'
 end
 
 

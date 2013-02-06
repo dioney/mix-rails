@@ -1,19 +1,11 @@
-class Setting
-  include Mongoid::Document
-
-  field :name,      type: String
-  field :key,       type: String
-  field :value
-  field :activated,  type: Boolean
-  field :system,    type: Boolean, default: false
-
-  validates_uniqueness_of :key
+class Setting < ActiveRecord::Base
+  attr_accessible :activated, :key, :name, :system, :value, :image, :image_cache
 
   mount_uploader :image, Settings::ImageUploader
-
+  
   def self.app_title
     begin
-      Setting.find_by(key: 'app_title', activated: true).value
+      Setting.where(key: 'app_title', activated: true).first.value
     rescue
       false
     end
@@ -21,7 +13,7 @@ class Setting
 
   def self.app_email
     begin
-      Setting.find_by(key: 'app_email', activated: true).value
+      Setting.where(key: 'app_email', activated: true).first.value
     rescue
       false
     end
@@ -29,7 +21,7 @@ class Setting
   
   def self.admix_logo
     begin
-      Setting.find_by(key: 'admix_logo', activated: true)
+      Setting.where(key: 'admix_logo', activated: true).first
     rescue
       false
     end
@@ -37,7 +29,7 @@ class Setting
 
   def self.link_twitter
     begin
-      Setting.find_by(key: 'link_twitter', activated: true).value
+      Setting.where(key: 'link_twitter', activated: true).first.value
     rescue
       false
     end
@@ -45,7 +37,7 @@ class Setting
 
   def self.link_facebook
     begin
-      Setting.find_by(key: 'link_facebook', activated: true).value
+      Setting.where(key: 'link_facebook', activated: true).first.value
     rescue
       false
     end
@@ -53,7 +45,7 @@ class Setting
 
   def self.albums_watermark
     begin
-      Setting.find_by(key: 'albums_watermark', activated: true)
+      Setting.where(key: 'albums_watermark', activated: true).first
     rescue
       false
     end
@@ -61,10 +53,11 @@ class Setting
 
   def self.albums_title
     begin
-      Setting.find_by(key: 'albums_title', activated: true).value
+      Setting.where(key: 'albums_title', activated: true).first.value
     rescue
       false
     end
   end
+
 
 end

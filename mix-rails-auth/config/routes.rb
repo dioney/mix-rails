@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   devise_for :users, sign_out_via: 'get'
 
   scope Admix::namespace_path, as: :admix, module: :admix do

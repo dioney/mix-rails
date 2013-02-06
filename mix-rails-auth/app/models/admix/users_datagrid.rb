@@ -3,7 +3,7 @@ class Admix::UsersDatagrid
   include Datagrid
 
   scope do
-    User.desc(:email)
+    User
   end
 
   filter :email, :string

@@ -4,7 +4,7 @@ class Admix::RolesDatagrid
   extend AdmixHelper
 
   scope do
-    Role.all
+    Role
   end
 
   column :name, header: input_label(:role, :name)

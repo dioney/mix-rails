@@ -1,5 +1,11 @@
 module MixRailsAuth
   class Engine < ::Rails::Engine
+    
+    config.generators do |g|                                                               
+      g.test_framework :rspec
+      g.integration_tool :rspec
+    end
+
     def navigation
       if defined? Admix
         Admix::Navigation::NavBar.post_menu do

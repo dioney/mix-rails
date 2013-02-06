@@ -3,7 +3,7 @@ class Admix::SettingsDatagrid
   include Datagrid
 
   scope do
-    Setting.desc(:name)
+    Setting
   end
 
   filter :name, :string

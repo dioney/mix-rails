@@ -1,3 +1,3 @@
-class Category
-  include Concerns::Category
+class Category < ActiveRecord::Base
+  attr_accessible :name
 end
