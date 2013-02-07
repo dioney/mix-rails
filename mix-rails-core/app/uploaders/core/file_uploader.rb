@@ -1,6 +1,5 @@
 # encoding: utf-8
 require 'carrierwave/processing/mini_magick'
-require 'mix-rails-core/gridfs'
 
 class Core::FileUploader < CarrierWave::Uploader::Base
 
@@ -13,7 +12,6 @@ class Core::FileUploader < CarrierWave::Uploader::Base
   include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
-  storage :grid_fs
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
