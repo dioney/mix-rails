@@ -12,14 +12,11 @@ end
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
 gem "haml-rails"
-gem 'bson_ext'
-gem 'mongo'
 
 # gem 'carrierwave'
 # gem 'carrierwave-mongoid', require: 'carrierwave/mongoid'
 # gem 'mini_magick'
-# 
-gem "carrierwave-mongoid", :git => "git://github.com/jnicklas/carrierwave-mongoid.git", :branch => "master"
+
 gem 'mini_magick', :git => 'git://github.com/probablycorey/mini_magick.git'
 
 # Declare any dependencies that are still in development here instead of in
