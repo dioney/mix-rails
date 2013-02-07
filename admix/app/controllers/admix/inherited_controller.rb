@@ -1,11 +1,23 @@
 module Admix
   class InheritedController < Admix::AdmixController
+    helper :all
 
     inherit_resources
+    include InheritedResources::DSL
+
+    rescue_from ActiveRecord::DeleteRestrictionError do |exception|
+      #resource.errors.add(:base, exception)
+      flash[:alert] = I18n.t('errors.dependent')
+      redirect_to collection_url
+    end
+
+    # destroy! do |success, failure|
+    #   failure.html { redirect_to polymorphic_path(resource) }
+    # end
 
     # TODO: Add authorization here.
 
-    helper :all
+    
 
     before_filter :generate_datagrid , only: [:index ]
 

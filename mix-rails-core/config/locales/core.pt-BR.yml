@@ -20,7 +20,6 @@ pt-BR:
   categories:
     categories: 'Categorias'
     category: 'Categoria'
-
   simple_form:
     labels:
       defaults:
@@ -69,3 +68,4 @@ pt-BR:
         password: 'Sua senha'
   errors:
     invalid_url: 'O formato da url está incorreto'
+    dependent: 'Não é possível deletar este registro pois está associado a outros.'
