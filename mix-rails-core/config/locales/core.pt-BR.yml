@@ -23,6 +23,7 @@ pt-BR:
   simple_form:
     labels:
       defaults:
+        cell: 'Celular'
         code: 'Código'
         lamina_image: 'Imagem de lâmina'
         featured_image: 'Imagem destaque'
