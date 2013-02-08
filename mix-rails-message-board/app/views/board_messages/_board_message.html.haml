@@ -5,7 +5,7 @@
     %small
       %span.white= I18n.localize(board_message.date)
   %p.muted.p.super= board_message.message
-  - if board_message.board_replies?
+  - if board_message.board_replies
     - board_message.board_replies.each do |r|
       .pad.p
         %span.yellow= r.name

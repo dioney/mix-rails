@@ -1,29 +1,20 @@
-class BoardMessage
-  
-  include Mongoid::Document
-  include Mongoid::Timestamps
-  include Mongoid::Paranoia
-
+class BoardMessage < ActiveRecord::Base
   extend Enumerize
 
-  field :name,          type: String
-  field :email,         type: String
-  field :message,       type: String
-  field :date,          type: DateTime, default: -> { Time.now }
-  field :approved,      type: String
-  enumerize :approved, in: [:pending, :approved, :disapproved], default: :pending, predicates: true
+  attr_accessible :date, :email, :message, :name, :status
+  enumerize :status, in: [:pending, :approved, :disapproved], default: :pending, predicates: true
 
-
-  validates_presence_of :name
-  validates_presence_of :email
-  validates_presence_of :message
-  validates_presence_of :date
-
+  validates_presence_of :name, :email, :message, :date
   validates :email, email: true
 
-  scope :approved, where(approved: :approved)
-  scope :pending, where(approved: :pending)
+  scope :approved, where(status: :approved)
+  scope :pending, where(status: :pending)
 
-  embeds_many :board_replies, cascade_callbacks: true
+  has_many :board_replies
 
+
+  default_value_for :date do
+    Time.now
+  end
+  
 end

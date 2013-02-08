@@ -2,7 +2,7 @@ class Admix::VouchersDatagrid
   include Datagrid
 
   scope do
-    Voucher.all
+    Voucher
   end
   column :name, header: I18n.t('vouchers.fields.name')
 

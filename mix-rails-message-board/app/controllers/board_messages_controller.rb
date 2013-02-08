@@ -17,7 +17,7 @@ class BoardMessagesController < ApplicationController
   end
 
   def show
-    @board_message = BoardMessage.find(params[:id])
+    @board_message = BoardMessage.includes(:board_replies).find(params[:id])
   end
 
 end

@@ -4,7 +4,7 @@ class Admix::BoardMessagesDatagrid
   extend AdmixHelper
 
   scope do
-    BoardMessage.desc(:date)
+    BoardMessage.order('date DESC')
   end
 
   filter :date do |value|
@@ -22,8 +22,8 @@ class Admix::BoardMessagesDatagrid
     board_message.board_replies.count
   end
 
-  column :approved, header: input_label(:board_message, :approved) do |board_message|
-    board_message.approved.text
+  column :status, header: input_label(:board_message, :status) do |board_message|
+    board_message.status.text
   end
 
   include Admix::TableActions

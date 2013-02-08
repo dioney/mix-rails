@@ -35,7 +35,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency "rails", "~> 3.2.11"
-
+  gem.add_dependency "default_value_for"
   gem.add_dependency "fancybox-rails", "~> 0.1.4"
   gem.add_dependency "bootstrap-sass", "~> 2.2.2.0"
   gem.add_dependency "jquery-qtip2-rails", "~> 0.4.0"

@@ -1,22 +1,18 @@
-class Voucher
-  include Mongoid::Document
-  include Mongoid::Timestamps
-  include Mongoid::Slug
+class Voucher < ActiveRecord::Base
+  extend FriendlyId
 
-  scope :actives, -> { where({:date_from.lte => Date.today, :date_to.gte => Date.today}) }
+  attr_accessible :date_from, :date_to, :name, :partner_photo, :photo, :rules
+  attr_accessible :photo_cache, :partner_photo_cache
 
-  field :name, type: String
-  field :rules, type: Array
-  field :date_from, type: Date
-  field :date_to, type: Date
+  scope :actives, -> { where("date_from <= ? and date_to >= ?", Date.today, Date.today) }
+
+  has_many :users, class_name: 'VoucherUser', dependent: :delete_all
+
   mount_uploader :photo, Vouchers::PhotoUploader
   mount_uploader :partner_photo, Vouchers::PhotoUploader
 
-  has_many :users, class_name: 'VoucherUser', dependent: :delete
-
   validates_presence_of :name, :rules, :photo
 
-  slug :name, history: true do |voucher|
-    voucher.name.parameterize
-  end
+  friendly_id :name, use: :slugged
+
 end

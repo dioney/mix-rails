@@ -11,7 +11,12 @@ pt-BR:
     models:
         board_message: 'Mensagem'
         board_reply: 'Resposta'
-
+  board_messages:
+    board_messages: 'Mural de recados'
+    board_message: 'Recado'
+  board_replies:
+    board_replies: 'Respostas do mural'
+    board_message: 'Resposta'
   simple_form:
     labels:
         board_message:

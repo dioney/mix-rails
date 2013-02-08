@@ -20,6 +20,7 @@ require 'rails-backbone'
 require 'bootstrap-sass'
 require 'jquery-qtip2-rails'
 require 'authority'
+require 'default_value_for'
 
 module MixRailsCore
 end

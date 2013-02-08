@@ -7,10 +7,10 @@
   %dd= resource.message
   %dt= input_label(:board_message, :date)
   %dd= localize(resource.date)
-  %dt= input_label(:board_message, :approved)
+  %dt= input_label(:board_message, :status)
   %dd 
-    = resource.approved.text
-    - if resource.disapproved? or resource.approved.pending?
+    = resource.status.text
+    - if resource.disapproved? or resource.status.pending?
       = link_to image_tag('admix/icons/shield_go.png'), approve_admix_board_message_path(resource), method: :put, data: { confirm: t('message_board.confirms.approve') }, class: 'btn', title:'Aprovar'
-    - if resource.approved.approved? or resource.approved.pending?
+    - if resource.status.approved? or resource.status.pending?
       = link_to image_tag('admix/icons/shield_delete.png'), disapprove_admix_board_message_path(resource), method: :put,data: { confirm: t('message_board.confirms.disapprove') }, class: 'btn', title:'Reprovar'

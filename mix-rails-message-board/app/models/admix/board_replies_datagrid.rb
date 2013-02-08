@@ -6,7 +6,7 @@ class Admix::BoardRepliesDatagrid
 
 
   scope do
-    BoardReply
+    BoardReply.order('date DESC')
   end
 
   filter :date do |value|
@@ -20,8 +20,8 @@ class Admix::BoardRepliesDatagrid
     board_reply.date.strftime("%d/%m/%Y")
   end
 
-  column :approved, header: input_label(:board_reply, :approved) do |board_reply|
-    board_reply.approved.text
+  column :status, header: input_label(:board_reply, :status) do |board_reply|
+    board_reply.status.text
   end
 
   include Admix::TableActions

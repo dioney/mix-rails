@@ -1,28 +1,27 @@
-class BoardReply
-  
-  include Mongoid::Document
-  include Mongoid::Timestamps
-  include Mongoid::Paranoia
-
+class BoardReply < ActiveRecord::Base
   extend Enumerize
-
-  field :name,          type: String, default: -> { Setting.app_title }
-  field :email,         type: String, default: -> { Setting.app_email }
-  field :message,       type: String
-  field :date,          type: DateTime, default: -> { Time.now }
-  field :approved,      type: String
-  enumerize :approved, in: [:pending, :approved, :disapproved], default: :approved, predicates: true
   
+  attr_accessible :date, :email, :message, :name, :status
+  enumerize :status, in: [:pending, :approved, :disapproved], default: :pending, predicates: true
 
-  validates_presence_of :name
-  validates_presence_of :email
-  validates_presence_of :date
-
+  validates_presence_of :name, :email, :message, :date
   validates :email, email: true
 
-  scope :approved, where(approved: :approved)
-  scope :pending, where(approved: :pending)
+  scope :approved, where(status: :approved)
+  scope :pending, where(status: :pending)
 
-  embedded_in :board_message
+  belongs_to :board_message
+
+  default_value_for :name do
+    Setting.app_title
+  end
+
+  default_value_for :email do
+    Setting.app_email
+  end
+
+  default_value_for :date do
+    Time.now
+  end
 
 end
