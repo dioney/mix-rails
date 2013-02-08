@@ -3,7 +3,7 @@ class Admix::PhotosDatagrid
   include Datagrid
 
   scope do
-    Photo.desc(:date)
+    Photo
   end
 
   filter :name, :string

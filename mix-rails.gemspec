@@ -25,8 +25,8 @@ Gem::Specification.new do |gem|
   gem.version       = version
   gem.authors       = ["Sadjow Leão"]
   gem.email         = ["sadjow@gmail.com"]
-  gem.description   = %q{MixRails is a CMS and system based on Ruby on Rails and use Mongoid as ORM(MongoDB)}
-  gem.summary       = %q{MixRails is a CMS and system based on Ruby on Rails and use Mongoid as ORM(MongoDB)}
+  gem.description   = %q{MixRails is a CMS and system based on Ruby on Rails}
+  gem.summary       = %q{MixRails is a CMS and system based on Ruby on Rails}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
@@ -34,7 +34,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency 'rails', '~> 3.2.11'
+  gem.add_dependency "rails", "~> 3.2.11"
 
   gem.add_dependency "fancybox-rails", "~> 0.1.4"
   gem.add_dependency "bootstrap-sass", "~> 2.2.2.0"
@@ -43,11 +43,15 @@ Gem::Specification.new do |gem|
   gem.add_dependency "haml-rails"
 
   # Contact
-  gem.add_dependency 'mail_form',    '~> 1.4.0'
-  gem.add_dependency 'simple_form',  '~> 2.0.0'
+  gem.add_dependency "mail_form",    "~> 1.4.0"
+  gem.add_dependency "simple_form",  "~> 2.0.0"
 
-  gem.add_dependency 'rolify'
-  gem.add_dependency 'authority'
+  #ACL
+  gem.add_dependency "rolify"
+  gem.add_dependency "authority"
+  gem.add_dependency "will_paginate"
+
+  gem.add_dependency "friendly_id", "~> 4.0.9"
 
   # Core dependencies
   gem.add_dependency "mix-rails-core",      version

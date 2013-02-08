@@ -1,6 +1,5 @@
 class Application.Models.Photo extends Backbone.Model
   paramRoot: 'photo'
-  idAttribute: '_id'
   defaults:
     image: null
     description: ''

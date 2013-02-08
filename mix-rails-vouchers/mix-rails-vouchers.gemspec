@@ -17,5 +17,4 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'mail_form', '~> 1.4.0'
   s.add_dependency "rails", "~> 3.2.9"
-  s.add_dependency 'carrierwave-mongoid', '~> 0.3.0'
 end

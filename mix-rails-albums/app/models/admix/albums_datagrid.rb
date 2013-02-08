@@ -6,7 +6,7 @@ class Admix::AlbumsDatagrid
 
 
   scope do
-    Album.desc(:date)
+    Album.order("date DESC")
   end
 
   filter :title, :string

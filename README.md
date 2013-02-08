@@ -3,14 +3,14 @@
 [![Build Status](https://travis-ci.org/mixinternet/mix-rails.png)](https://travis-ci.org/mixinternet/mix-rails)
 [![Dependency Status](https://gemnasium.com/mixinternet/mix-rails.png)](https://gemnasium.com/mixinternet/mix-rails)
 
-MixRails is a CMS based on Ruby on Rails and uses Mongoid as ORM(MongoDB).
+MixRails is a CMS based on Ruby on Rails.
 
 
 ## Usage
 
 Create a new rails project.
 
-    $ rails new myproject -T --skip-active-record --skip-bundle --dummy-path=spec/dummy
+    $ rails new myproject -T --skip-bundle --dummy-path=spec/dummy
 
 Add this line to your application's Gemfile:
 
@@ -25,19 +25,10 @@ And then execute:
 In your config/application.rb add require 'mix-rails/all'.
 
 ```ruby
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "active_resource/railtie"
-require "sprockets/railtie"
-require "rails/test_unit/railtie"
-
+require 'rails/all'
 # After rails requiring mix-rails!!
 require "mix-rails/all"
 ```
-
-Configure a mongoid instance with:
-
-    $ rails generate mongoid:config
 
 And then run the application
 
@@ -84,5 +75,5 @@ TODO: Add some docs for admix
 
 ## Creating a extension
 
-    $ rails plugin new mix-rails-pluginame -T --skip-active-record --skip-bundle --dummy-path=spec/dummy --full
+    $ rails plugin new mix-rails-pluginame -T --skip-bundle --dummy-path=spec/dummy --full
 s

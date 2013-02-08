@@ -1,6 +1,5 @@
 # encoding: utf-8
 require 'carrierwave/processing/mini_magick'
-require 'mix-rails-core/gridfs'
 
 class Albums::ImageUploader < CarrierWave::Uploader::Base
 
@@ -13,13 +12,13 @@ class Albums::ImageUploader < CarrierWave::Uploader::Base
   include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
-  storage :grid_fs
+  
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "system/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   def cache_dir
@@ -51,6 +50,8 @@ class Albums::ImageUploader < CarrierWave::Uploader::Base
       
       albums_watermark = Setting.albums_watermark
       
+      #raise albums_watermark.image
+
       watermark_image = if albums_watermark
         gridfs_file = MixRailsCore::Gridfs::read_file(albums_watermark.image.url)
         MiniMagick::Image.read(gridfs_file, "png")
