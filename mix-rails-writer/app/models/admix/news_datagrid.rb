@@ -4,7 +4,7 @@ class Admix::NewsDatagrid
 
 
   scope do
-    News.desc(:date)
+    News.order('id DESC')
   end
 
   filter :date do |value|
@@ -24,12 +24,8 @@ class Admix::NewsDatagrid
     end
   end
 
-  column :published, header: I18n.t('posts.published') do |post|
-    if post.published 
-      I18n.t("posts.published_yes")
-    else 
-      I18n.t("posts.published_no")
-    end
+  column :status, header: I18n.t('posts.status') do |post|
+    post.status.text
   end
   
 
