@@ -51,7 +51,7 @@ class Albums::ImageUploader < CarrierWave::Uploader::Base
       albums_watermark = Setting.albums_watermark
       
       watermark_image = if albums_watermark
-        MiniMagick::Image.open("#{Rails.root}#{albums_watermark.image.url}", "png")
+        MiniMagick::Image.open("#{Rails.root}/public#{albums_watermark.image.url}", "png")
       else
         # We can read a file from system too.
         #MiniMagick::Image.open("#{Rails.root}/app/assets/images/watermarks/watermark.png", "png")
