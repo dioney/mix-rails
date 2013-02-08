@@ -50,11 +50,8 @@ class Albums::ImageUploader < CarrierWave::Uploader::Base
       
       albums_watermark = Setting.albums_watermark
       
-      #raise albums_watermark.image
-
       watermark_image = if albums_watermark
-        gridfs_file = MixRailsCore::Gridfs::read_file(albums_watermark.image.url)
-        MiniMagick::Image.read(gridfs_file, "png")
+        MiniMagick::Image.open("#{Rails.root}#{albums_watermark.image.url}", "png")
       else
         # We can read a file from system too.
         #MiniMagick::Image.open("#{Rails.root}/app/assets/images/watermarks/watermark.png", "png")
