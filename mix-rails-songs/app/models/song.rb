@@ -1,13 +1,11 @@
-class Song
-  
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Song < ActiveRecord::Base
   extend Enumerize
+  extend FriendlyId
 
-  field :title,         type: String
-  field :author,        type: String
-  field :status,        type: String
+  attr_accessible :author, :mp3, :slug, :status, :title
+
   enumerize :status, in: [:published, :unpublished], default: :published, predicates: true
+  friendly_id :title, use: :slugged
 
   mount_uploader :mp3, Songs::SongUploader
 
@@ -15,5 +13,7 @@ class Song
   validates_presence_of :author
 
   scope :published, where(status: :published)
-  
+
+  belongs_to :related, polymorphic: true
+
 end

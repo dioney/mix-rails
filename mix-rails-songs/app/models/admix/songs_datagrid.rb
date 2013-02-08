@@ -5,7 +5,7 @@ class Admix::SongsDatagrid
   extend AdmixHelper
 
   scope do
-    Song.desc(:date)
+    Song.order('id DESC')
   end
 
   column :title, header: input_label(:song, :title)
