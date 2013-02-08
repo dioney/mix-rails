@@ -1,7 +1,7 @@
 module MixRailsMessageBoard
   module VERSION #:nodoc:
     MAJOR = 0
-    MINOR = 22
+    MINOR = 23
     TINY  = 0
     PRE   = nil
 
