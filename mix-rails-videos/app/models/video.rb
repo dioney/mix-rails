@@ -1,30 +1,17 @@
-class Video
-  include Mongoid::Document
-  include Mongoid::Timestamps
-  include Mongoid::Slug
+class Video < ActiveRecord::Base
+  extend FriendlyId
 
-  scope :most_recent, order_by(published_at: -1, name: 1)
-
-  field :url, type: String
-  field :title, type: String
-  field :description, type: String
-  field :title, type: String
-  field :likes, type: Integer
-  field :dislikes, type: Integer
-  field :views, type: Integer
-  field :youtube_code, type: String
-  field :published_at, type: Time
-  field :seconds, type: Integer
-  field :category, type: String
-  field :active, type: Boolean, default: true
+  attr_accessible :active, :category, :description, :dislikes, :likes, :published_at, :seconds, :title, :url, :views, :youtube_code
+  
+  friendly_id :title, use: :slugged
 
   validates :url, presence: true, youtube: true
 
-  slug :title, history: true do |video|
-    video.title.parameterize
-  end
+  belongs_to :related, polymorphic: true
 
   after_validation :insert_youtube_data
+
+  scope :most_recent, order('published_at DESC, title ASC')
 
   def insert_youtube_data
     if self.errors.blank?
