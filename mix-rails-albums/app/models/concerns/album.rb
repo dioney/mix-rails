@@ -17,7 +17,7 @@ module Concerns::Album
     validation_for_date
 
 
-    scope :published, where(status: :published).joins(:photos).having("count(photos.id) > 1")
+    scope :published, includes(:photos).where(status: :published).having('COUNT(photos.id) > 0')
 
   end
 
