@@ -3,8 +3,8 @@ pt-BR:
     albums: 'albuns'
     photos: 'fotos'
   will_paginate:
-    previous_label: "<< admix"
-    next_label: "próximo >>"
+    previous_label: "anterior"
+    next_label: "próximo"
   albums:
     published_yes: 'Sim'
     published_no: 'Não'

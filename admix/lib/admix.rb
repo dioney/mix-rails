@@ -4,6 +4,7 @@ require 'admix/navigation/navbar'
 
 
 require 'will_paginate'
+require 'will_paginate-bootstrap'
 require 'will_paginate/array'
 require 'datagrid'
 require 'admix/table-actions'

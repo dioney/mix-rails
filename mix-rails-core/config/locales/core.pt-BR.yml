@@ -1,4 +1,6 @@
-pt-BR:
+pt-BR:  
+  boolean_true: 'Sim'
+  boolean_false: 'Não'
   enumerize:
     status:
       activeted: 'Ativado'

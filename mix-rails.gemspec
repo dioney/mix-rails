@@ -51,6 +51,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "rolify"
   gem.add_dependency "authority"
   gem.add_dependency "will_paginate"
+  gem.add_dependency "will_paginate-bootstrap"
 
   gem.add_dependency "friendly_id", "~> 4.0.9"
 

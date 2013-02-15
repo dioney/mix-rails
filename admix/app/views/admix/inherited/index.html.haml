@@ -1,5 +1,5 @@
 %h1= t('admix.crud.listing', resources: t("#{@collection_name}.#{@collection_name}"))
 
 = datagrid_table @report, @assets, html: {class: 'table table-striped'}
-= will_paginate @assets
+= will_paginate @assets, :renderer => BootstrapPagination::Rails
 = link_to t('admix.crud.new.link'), new_resource_url, class: 'btn'
