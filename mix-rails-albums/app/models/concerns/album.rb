@@ -10,7 +10,7 @@ module Concerns::Album
     enumerize :status, in: [:published, :unpublished], default: :published, predicates: true
     friendly_id :title, use: :slugged
 
-    has_many :photos, :as => :related, dependent: :delete_all
+    has_many :photos, :as => :related, dependent: :destroy
     belongs_to :related, :polymorphic => true
 
     validation_for_title
