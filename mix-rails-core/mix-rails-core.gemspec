@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "mail_form",    "~> 1.4.0"
   gem.add_dependency "simple_form",  "~> 2.0.0"
-  
+
   gem.add_dependency "enumerize"
 
   gem.add_dependency "activevalidators"
@@ -29,7 +29,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "carrierwave"
   gem.add_dependency "mini_magick"
   gem.add_dependency "haml_coffee_assets"
-  
+
   gem.add_dependency "rspec-rails"
   gem.add_dependency "database_cleaner"
 
@@ -42,7 +42,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency "jquery-ui-rails"
 
   gem.add_dependency "coffee-script"
-  gem.add_dependency "coffee-filter"
   gem.add_dependency "rails-backbone"
   #gem.add_dependency "sass-rails"
 
