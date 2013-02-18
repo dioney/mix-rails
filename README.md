@@ -10,7 +10,7 @@ MixRails is a CMS based on Ruby on Rails.
 
 Create a new rails project.
 
-    $ rails new myproject -T --skip-bundle --dummy-path=spec/dummy
+    $ rails new myproject -T --skip-bundle
 
 Add this line to your application's Gemfile:
 
@@ -19,7 +19,7 @@ Add this line to your application's Gemfile:
 And then execute:
     
     $ cd myproject
-    $ bundle
+    $ bundle install
 
 
 In your config/application.rb add require 'mix-rails/all'.
@@ -48,6 +48,9 @@ You can use Backbone, CoffeeScript, HAML,
 # Auth
 Mix-Rails uses [Devise](https://github.com/plataformatec/devise) for auth, you can see more docs at:
 
+# ACL 
+Rolify + Authority
+
 Create a default user.
 
     $ bundle exec rake create_user[yourname@example.com,mypassword]
@@ -66,8 +69,6 @@ You can change default path for admix setting  Admix::namespace_path
 Admix::namespace_path = "myadminpath"
 # You will access http://localhost:3000/myadminpath and see Admix running!!
 ```
-
-TODO: Add some docs for admix
 
 [![Admix](http://img233.imageshack.us/img233/6731/screenshotfrom201301221.png)]
 
